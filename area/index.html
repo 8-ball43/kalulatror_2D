@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h1>Liczenie pól</h1>
+    </header>
+    <nav>
+        <button type="button" id="button_square"><img src="square_2.png"></button>
+        <button type="button" id="button_rectangle"><img src="rectangle_2.png"></button>
+        <button type="button" id="button_triangle"><img src="triangle_2.png"></button>
+        <button type="button" id="button_parallelogram"><img src="parallelogram_2.png"></button>
+        <button type="button" id="button_rhombus"><img src="rhombus_2.png"></button>
+        <button type="button" id="button_trapeze"><img src="trapeze_2.png"></button>
+    </nav>
+    <main>
+        <div id="block_1" class="block_show">
+                <br>
+                <h3>Kwadrat</h3>
+                <label>Podaj dłgość krawędzi kwadratu w cm:</label><input type="number" id="square_block"><button type="button" id="button_1">oblicz</button><br>
+                <img src="square.png" alt="square"><br/>
+                <p id="result_square"></p>
+        </div>
+        <div id="block_2">
+            <br>
+            <h3>Prostokąt</h3>
+          <label>Podaj pierwszą krawędz w cm</label><input type="number" id="rectangle_a"><br>
+          <label>Podaj drugą krawędz w cm</label><input type="number" id="rectangle_b"><br>
+          <button type="button" id="button_2">Oblicz</button><br>
+          <img src="rectangle.png" alt="prostokąt">
+          <p id="result_rectangle"></p>
+        </div>
+        <div id="block_3">
+            <h3>Trójkąt</h3>
+            <label>Podaj podstawe trójkąta:</label><input type="number" id="triangle_a"><br>
+            <label>Podaj wysokość trójkąta:</label><input type="number" id="triangle_height"><br>
+            <button type="button" id="button_3">Oblicz</button><br>
+            <img src="triangle.png" alt="trójkąt">
+            <p id="result_triangle"></p>
+        </div>
+        <div id="block_4">
+            <h3>Równoległobok</h3>
+            <label>Podaj podstawe równoległoboku:</label><input type="number" id="parallelogram_a"><br>
+            <label>Podaj wysokość równoległoboku:</label><input type="number" id="parallelogram_height"><br>
+            <button type="button" id="button_4">Oblicz</button><br/>
+            <img src="parallelogram.png" alt="równoległobok">
+            <p id="result_parallelogram"></p>
+        </div>
+        <div id="block_5">
+            <h3>Romb</h3>
+            <h2>Sposób 1</h2>
+            <label>Podaj długość krawędzi romba:</label><input type="number" id="rhombus_a"><br>
+            <label>Podaj długość wysokości rombu:</label><input type="number" id="rhombus_height"><br>
+            <button type="button" id="button_5_1">Oblicz</button><br>
+            <img src="rhombus.png" alt="romb">
+            <p id="result_rhombus_1"></p>
+            <h2>Sposób 2</h2>
+            <label>Podaj długość pierwszej przekątnej rombu:</label><input type="number" id="rhombus_e"><br>
+            <label>Podaj długość drugiej przekątnej rombu:</label><input type="number" id="rhombus_f"><br>
+            <button type="button" id="button_5_2">Oblicz</button><br>
+            <p id="result_rhombus_2"></p>
+        </div>
+        <div id="block_6">
+            <h3>Trapez</h3>
+            <label>Podaj długość pierwszej podstawy trapezu:</label><input type="number" id="trapeze_a"><br>
+            <label>Podaj długość drugiej podstawy trapezu czyli dachu:</label><input type="number" id="trapeze_b"><br>
+            <label>Podaj wysokość trapezu:</label><input type="number" id="trapeze_height"><br>
+            <button type="button" id="button_6">Oblicz</button><br>
+            <img src="trapeze.png" alt="trapez">
+            <p id="result_trapeze"></p>
+        </div>
+    </main>
+    <footer></footer>
+    <script>
+        const block_1 = document.getElementById("block_1");
+        const block_2 = document.getElementById("block_2");
+        const block_3 = document.getElementById("block_3");
+        const block_4 = document.getElementById("block_4");
+        const block_5 = document.getElementById("block_5");
+        const block_6 = document.getElementById("block_6");
+
+        const button_square = document.getElementById("button_square");
+        const button_rectangle =  document.getElementById("button_rectangle");
+        const button_triangle = document.getElementById("button_triangle");
+        const button_parallelogram = document.getElementById("button_parallelogram");
+        const button_rhombus = document.getElementById("button_rhombus");
+        const button_trapeze = document.getElementById("button_trapeze");
+
+        const button_1 = document.getElementById("button_1");
+        const button_2 = document.getElementById("button_2");
+        const button_3 = document.getElementById("button_3");
+        const button_4 = document.getElementById("button_4");
+        const button_5_1 = document.getElementById("button_5_1");
+        const button_5_2 = document.getElementById("button_5_2");
+        const button_6 = document.getElementById("button_6");
+
+        button_square.addEventListener("click",function(){
+            block_1.classList.add("block_show");
+
+            block_2.classList.remove("block_show");
+            block_3.classList.remove("block_show");
+            block_4.classList.remove("block_show");
+            block_5.classList.remove("block_show");
+            block_6.classList.remove("block_show");
+        });
+        button_rectangle.addEventListener("click",function(){
+            block_2.classList.add("block_show");
+
+            block_1.classList.remove("block_show");
+            block_3.classList.remove("block_show");
+            block_4.classList.remove("block_show");
+            block_5.classList.remove("block_show");
+            block_6.classList.remove("block_show");
+        });
+        button_triangle.addEventListener("click",function(){
+            block_3.classList.add("block_show");
+
+            block_1.classList.remove("block_show");
+            block_2.classList.remove("block_show");
+            block_4.classList.remove("block_show");
+            block_5.classList.remove("block_show");
+            block_6.classList.remove("block_show");
+        });
+        button_parallelogram.addEventListener("click",function(){
+            block_4.classList.add("block_show");
+
+            block_1.classList.remove("block_show");
+            block_2.classList.remove("block_show");
+            block_3.classList.remove("block_show");
+            block_5.classList.remove("block_show");
+            block_6.classList.remove("block_show");
+        });
+        button_rhombus.addEventListener("click",function(){
+            block_5.classList.add("block_show");
+
+            block_1.classList.remove("block_show");
+            block_2.classList.remove("block_show");
+            block_3.classList.remove("block_show");
+            block_4.classList.remove("block_show");
+            block_6.classList.remove("block_show");
+        });
+        button_trapeze.addEventListener("click",function(){
+            block_6.classList.add("block_show");
+
+            block_1.classList.remove("block_show");
+            block_2.classList.remove("block_show");
+            block_3.classList.remove("block_show");
+            block_4.classList.remove("block_show");
+            block_5.classList.remove("block_show");
+        });
+
+
+        
+        button_1.addEventListener("click",function(){
+            const p = document.getElementById("result_square");
+            let a = document.getElementById("square_block").value;
+            let area = Math.pow(a,2);
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+
+        button_2.addEventListener("click",function(){
+            const p = document.getElementById("result_rectangle");
+            let a = document.getElementById("rectangle_a").value;
+            let b = document.getElementById("rectangle_b").value;
+            let area = a * b;
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+
+        button_3.addEventListener("click",function(){
+            const p = document.getElementById("result_triangle");
+            let a = document.getElementById("triangle_a").value;
+            let h = document.getElementById("triangle_height").value;
+            let area = (a * h) / 2;
+            p.textContent="Pole wnosi: "+area+"cm2";
+           ;p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+
+        button_4.addEventListener("click",function(){
+            const p = document.getElementById("result_parallelogram");
+            let a = document.getElementById("parallelogram_a").value;
+            let h = document.getElementById("parallelogram_height").value;
+            let area = a * h;
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+        button_5_1.addEventListener("click",function(){
+            const p = document.getElementById("result_rhombus_1");
+            
+            let a = document.getElementById("rhombus_a").value;
+            let h = document.getElementById("rhombus_height").value;
+
+            let area = a * h;
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+         button_5_2.addEventListener("click",function(){
+            const p = document.getElementById("result_rhombus_2");
+            
+            let e = document.getElementById("rhombus_e").value;
+            let f = document.getElementById("rhombus_f").value;
+
+            let area = (e*f) / 2;
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+        button_6.addEventListener("click",function(){
+            const p = document.getElementById("result_trapeze");
+
+            let a = parseInt(document.getElementById("trapeze_a").value);
+            let b = parseInt(document.getElementById("trapeze_b").value);
+            let h = parseInt(document.getElementById("trapeze_height").value);
+
+            let area = (a+b)*h/2;
+            p.textContent="Pole wnosi: "+area+"cm2";
+            p.style.textDecoration="underline";
+        });
+
+     </script>
+</body>
+</html>
